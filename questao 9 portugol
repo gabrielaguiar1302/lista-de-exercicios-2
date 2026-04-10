@@ -1,0 +1,63 @@
+algoritmo "perfil_clientes"
+
+var
+   idade, i, maior_idade, menor_idade, cont_fem_acima3000, cont_acima50: inteiro
+   sexo: caractere
+   salario, soma_salario, media: real
+   percentual_acima50: real
+
+inicio
+
+   soma_salario <- 0
+   cont_fem_acima3000 <- 0
+   cont_acima50 <- 0
+
+   para i de 1 ate 20 faca
+
+      escreva("Digite a idade: ")
+      leia(idade)
+
+      escreva("Digite o sexo (M/F): ")
+      leia(sexo)
+
+      escreva("Digite o salário: ")
+      leia(salario)
+
+      soma_salario <- soma_salario + salario
+
+      // Maior e menor idade
+      se i = 1 entao
+         maior_idade <- idade
+         menor_idade <- idade
+      senao
+         se idade > maior_idade entao
+            maior_idade <- idade
+         fimse
+
+         se idade < menor_idade entao
+            menor_idade <- idade
+         fimse
+      fimse
+
+      // Mulheres com salário acima de 3000
+      se (sexo = "F" ou sexo = "f") e salario > 3000 entao
+         cont_fem_acima3000 <- cont_fem_acima3000 + 1
+      fimse
+
+      // Pessoas com mais de 50 anos
+      se idade > 50 entao
+         cont_acima50 <- cont_acima50 + 1
+      fimse
+
+   fimpara
+
+   media <- soma_salario / 20
+   percentual_acima50 <- (cont_acima50 / 20) * 100
+
+   escreval("Média salarial: ", media)
+   escreval("Maior idade: ", maior_idade)
+   escreval("Menor idade: ", menor_idade)
+   escreval("Quantidade de mulheres com salário acima de R$3000: ", cont_fem_acima3000)
+   escreval("Percentual de clientes acima de 50 anos: ", percentual_acima50, "%")
+
+fimalgoritmo
