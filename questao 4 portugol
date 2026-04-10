@@ -1,0 +1,30 @@
+algoritmo "SomaComRepeticao"
+
+var
+   valor1, valor2, soma: real
+   resposta: caractere
+
+inicio
+
+   resposta <- "S"
+
+   enquanto (resposta = "S" ou resposta = "s") faca
+
+      escreva("Digite o primeiro valor: ")
+      leia(valor1)
+
+      escreva("Digite o segundo valor: ")
+      leia(valor2)
+
+      soma <- valor1 + valor2
+
+      escreva("Soma = ", soma, "\n")
+
+      escreva("Novo Calculo (S/N)? ")
+      leia(resposta)
+
+   fimenquanto
+
+   escreva("Fim dos Calculos")
+
+fimalgoritmo
