@@ -1,0 +1,45 @@
+algoritmo "temperaturas"
+
+var
+   temperatura, soma, media: real
+   contador, acima30, abaixo15: inteiro
+
+inicio
+   soma <- 0
+   contador <- 0
+   acima30 <- 0
+   abaixo15 <- 0
+
+   escreva("Digite a temperatura (999 para encerrar): ")
+   leia(temperatura)
+
+   enquanto (temperatura <> 999) faca
+
+      soma <- soma + temperatura
+      contador <- contador + 1
+
+      se (temperatura > 30) entao
+         acima30 <- acima30 + 1
+      fimse
+
+      se (temperatura < 15) entao
+         abaixo15 <- abaixo15 + 1
+      fimse
+
+      escreva("Digite a temperatura (999 para encerrar): ")
+      leia(temperatura)
+
+   fimenquanto
+
+   se (contador > 0) entao
+      media <- soma / contador
+
+      escreval("Quantidade de temperaturas: ", contador)
+      escreval("Média das temperaturas: ", media)
+      escreval("Acima de 30°C: ", acima30)
+      escreval("Abaixo de 15°C: ", abaixo15)
+   senao
+      escreval("Nenhuma temperatura válida foi registrada.")
+   fimse
+
+fimalgoritmo
