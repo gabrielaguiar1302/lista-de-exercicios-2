@@ -1,0 +1,44 @@
+algoritmo "controle_estoque"
+
+var
+   estoque, venda: inteiro
+
+inicio
+   // Entrada do estoque inicial
+   escreva("Digite a quantidade inicial em estoque: ")
+   leia(estoque)
+
+   // Loop de vendas
+   enquanto estoque > 0 faca
+      escreva("Digite a quantidade vendida (0 para encerrar): ")
+      leia(venda)
+
+      // Se digitar 0, encerra
+      se venda = 0 entao
+         interrompa
+      fimse
+
+      // Atualiza o estoque
+      estoque <- estoque - venda
+
+      // Evita estoque negativo
+      se estoque < 0 entao
+         estoque <- 0
+      fimse
+
+      // Mostra estoque atual
+      escreva("Estoque atual: ", estoque, "\n")
+
+      // Verifica estoque baixo
+      se estoque < 10 e estoque > 0 entao
+         escreva("Estoque baixo! Repor imediatamente.\n")
+      fimse
+
+      // Verifica se acabou o estoque
+      se estoque = 0 entao
+         escreva("Estoque esgotado! Programa encerrado.\n")
+      fimse
+
+   fimenquanto
+
+fimalgoritmo
