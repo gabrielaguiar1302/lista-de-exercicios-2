@@ -1,0 +1,31 @@
+algoritmo "JogoAdivinhacao"
+
+var
+   numeroSecreto, tentativa: inteiro
+
+inicio
+
+   // Gerando número secreto entre 1 e 100
+   numeroSecreto <- aleatorio(1,100)
+
+   escreva("Tente adivinhar o número entre 1 e 100!")
+
+   // Loop até acertar
+   enquanto (tentativa <> numeroSecreto) faca
+
+      escreva("\nDigite seu palpite: ")
+      leia(tentativa)
+
+      se (tentativa < numeroSecreto) entao
+         escreva("Muito baixo! Tente novamente.")
+      senao
+         se (tentativa > numeroSecreto) entao
+            escreva("Muito alto! Tente novamente.")
+         senao
+            escreva("Parabéns! Você acertou!")
+         fimse
+      fimse
+
+   fimenquanto
+
+fimalgoritmo
