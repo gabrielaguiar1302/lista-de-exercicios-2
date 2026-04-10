@@ -1,0 +1,60 @@
+algoritmo "votacao_turma"
+
+var
+   voto: inteiro
+   contA, contB, contC: inteiro
+   totalValidos: inteiro
+
+inicio
+
+   contA <- 0
+   contB <- 0
+   contC <- 0
+   totalValidos <- 0
+
+   escreva("Votação para representante de turma\n")
+   escreva("1 - Candidato A\n")
+   escreva("2 - Candidato B\n")
+   escreva("3 - Candidato C\n")
+   escreva("Digite 0 para encerrar\n\n")
+
+   repita
+      escreva("Digite seu voto: ")
+      leia(voto)
+
+      escolha (voto)
+         caso 1
+            contA <- contA + 1
+            totalValidos <- totalValidos + 1
+         caso 2
+            contB <- contB + 1
+            totalValidos <- totalValidos + 1
+         caso 3
+            contC <- contC + 1
+            totalValidos <- totalValidos + 1
+         caso 0
+            // encerra
+         outrocaso
+            escreva("Voto inválido!\n")
+      fimescolha
+
+   ate (voto = 0)
+
+   escreva("\nResultado da votação:\n")
+   escreva("Candidato A: ", contA, " votos\n")
+   escreva("Candidato B: ", contB, " votos\n")
+   escreva("Candidato C: ", contC, " votos\n")
+   escreva("Total de votos válidos: ", totalValidos, "\n")
+
+   // Verificando o vencedor
+   se (contA > contB) e (contA > contC) entao
+      escreva("Vencedor: Candidato A\n")
+   senao se (contB > contA) e (contB > contC) entao
+      escreva("Vencedor: Candidato B\n")
+   senao se (contC > contA) e (contC > contB) entao
+      escreva("Vencedor: Candidato C\n")
+   senao
+      escreva("Houve empate!\n")
+   fimse
+
+fimalgoritmo
