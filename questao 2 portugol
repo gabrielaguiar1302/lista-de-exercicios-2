@@ -1,0 +1,20 @@
+algoritmo "MaiorNumero"
+var
+   n, maior: inteiro
+inicio
+   escreva("Digite um número (0 para encerrar): ")
+   leia(n)
+
+   maior <- n
+
+   enquanto (n <> 0) faca
+      se (n > maior) entao
+         maior <- n
+      fimse
+
+      escreva("Digite um número (0 para encerrar): ")
+      leia(n)
+   fimenquanto
+
+   escreva("O maior número digitado foi: ", maior)
+fimalgoritmo
