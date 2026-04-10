@@ -1,0 +1,27 @@
+algoritmo "idades_pessoas"
+
+var
+   idade, i: inteiro
+   menor21, maior50: inteiro
+
+inicio
+   menor21 <- 0
+   maior50 <- 0
+
+   para i de 1 ate 10 faca
+      escreva("Digite a idade da pessoa ", i, ": ")
+      leia(idade)
+
+      se idade < 21 entao
+         menor21 <- menor21 + 1
+      fimse
+
+      se idade > 50 entao
+         maior50 <- maior50 + 1
+      fimse
+   fimpara
+
+   escreval("Total de pessoas com menos de 21 anos: ", menor21)
+   escreval("Total de pessoas com mais de 50 anos: ", maior50)
+
+fimalgoritmo
