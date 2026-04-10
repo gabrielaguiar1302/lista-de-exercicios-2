@@ -1,0 +1,16 @@
+algoritmo "100_numeros_pares"
+
+var
+   contador, numero: inteiro
+
+inicio
+   contador <- 1
+   numero <- 2
+
+   enquanto contador <= 100 faca
+      escreval(numero)
+      numero <- numero + 2
+      contador <- contador + 1
+   fimenquanto
+
+fimalgoritmo
